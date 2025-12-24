@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  GURU
+  WALI_KELAS
+  SISWA
+  ORANG_TUA
+}
+
+enum GradeType {
+  HARIAN
+  TUGAS
+  PTS
+  SAS
+  RAPOR
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  name          String
+  email         String?  @unique
+  passwordHash  String
+  role          Role
+  teacher       Teacher?
+  student       Student?
+  parent        Parent?
+  homeroomClass Class?
+  createdAt     DateTime @default(now())
+}
+
+model Teacher {
+  id      Int  @id @default(autoincrement())
+  userId  Int  @unique
+  user    User @relation(fields: [userId], references: [id])
+  grades  Grade[]
+}
+
+model Class {
+  id          Int      @id @default(autoincrement())
+  name        String
+  homeroomId  Int?     @unique
+  homeroom    User?    @relation(fields: [homeroomId], references: [id])
+  students    Student[]
+}
+
+model Student {
+  id         Int      @id @default(autoincrement())
+  userId     Int      @unique
+  user       User     @relation(fields: [userId], references: [id])
+  nisn       String   @unique
+  classId    Int?
+  class      Class?   @relation(fields: [classId], references: [id])
+  parents    Parent[]
+  grades     Grade[]
+  attendances Attendance[]
+  eskulScores EskulScore[]
+  remarks    HomeroomRemark[]
+}
+
+model Parent {
+  id         Int     @id @default(autoincrement())
+  userId     Int     @unique
+  user       User    @relation(fields: [userId], references: [id])
+  studentId  Int
+  student    Student @relation(fields: [studentId], references: [id])
+}
+
+model Subject {
+  id        Int      @id @default(autoincrement())
+  code      String   @unique
+  name      String
+  grades    Grade[]
+}
+
+model Extracurricular {
+  id     Int    @id @default(autoincrement())
+  code   String @unique
+  name   String
+  scores EskulScore[]
+}
+
+model Grade {
+  id         Int       @id @default(autoincrement())
+  studentId  Int
+  subjectId  Int
+  teacherId  Int?
+  type       GradeType
+  value      Float
+  semester   Int
+  year       String
+  desc       String?
+  createdAt  DateTime  @default(now())
+
+  student    Student   @relation(fields: [studentId], references: [id])
+  subject    Subject   @relation(fields: [subjectId], references: [id])
+  teacher    Teacher?  @relation(fields: [teacherId], references: [id])
+
+  @@index([studentId, subjectId, type, semester, year])
+}
+
+model Attendance {
+  id         Int      @id @default(autoincrement())
+  studentId  Int
+  semester   Int
+  year       String
+  sakit      Int      @default(0)
+  izin       Int      @default(0)
+  alfa       Int      @default(0)
+  student    Student  @relation(fields: [studentId], references: [id])
+
+  @@unique([studentId, semester, year], name: "studentId_semester_year")
+}
+
+model EskulScore {
+  id              Int      @id @default(autoincrement())
+  studentId       Int
+  extracurricularId Int
+  semester        Int
+  year            String
+  nilai           String
+  catatan         String?
+  student         Student  @relation(fields: [studentId], references: [id])
+  extracurricular Extracurricular @relation(fields: [extracurricularId], references: [id])
+
+  @@unique([studentId, extracurricularId, semester, year], name: "studentId_extracurricularId_semester_year")
+}
+
+model HomeroomRemark {
+  id         Int     @id @default(autoincrement())
+  studentId  Int
+  semester   Int
+  year       String
+  note       String
+  student    Student @relation(fields: [studentId], references: [id])
+
+  @@unique([studentId, semester, year], name: "studentId_semester_year")
+}

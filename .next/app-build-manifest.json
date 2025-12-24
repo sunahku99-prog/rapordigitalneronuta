@@ -1,0 +1,81 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/_not-found/page-32c70da5a397ed57.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/layout-4bb44d798282a73b.js"
+    ],
+    "/admin/guru/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/admin/guru/page-57eb528d7a4d1782.js"
+    ],
+    "/admin/eskul/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/admin/eskul/page-bfd77334f9eec5d3.js"
+    ],
+    "/admin/siswa/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/admin/siswa/page-f1df42af33f8a25a.js"
+    ],
+    "/admin/mapel/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/admin/mapel/page-a79c864842bf2de2.js"
+    ],
+    "/guru/dashboard/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/guru/dashboard/page-e4656b5ded9b27e7.js"
+    ],
+    "/login/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/login/page-989fce6a9e86c5ba.js"
+    ],
+    "/siswa/dashboard/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/siswa/dashboard/page-c3642e9b7e99d3f8.js"
+    ],
+    "/walikelas/dashboard/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/walikelas/dashboard/page-b1417c4084a0fbcf.js"
+    ],
+    "/admin/dashboard/page": [
+      "static/chunks/webpack-100b9e646d9c912e.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-a539d4485403ba11.js",
+      "static/chunks/main-app-d6c61bf6165dcec1.js",
+      "static/chunks/app/admin/dashboard/page-b1bcc59d440de8ee.js"
+    ]
+  }
+}
