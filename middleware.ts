@@ -1,8 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server';
+// Middleware disabled due to Vercel Edge Runtime issues
+// JWT verification happens in API routes instead (runtime = 'nodejs')
 
-// Temporarily disabled to debug 404 issue
-// export const config = { matcher: ['/admin/:path*', '/guru/:path*', '/walikelas/:path*', '/siswa/:path*'] };
-
-export function middleware(req: NextRequest) {
-  return NextResponse.next();
-}
